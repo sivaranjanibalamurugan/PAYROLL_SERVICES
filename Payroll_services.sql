@@ -26,4 +26,12 @@ select sum(salary) as totalSalary,gender from employee_payroll group by  gender;
 select avg(salary) as avgSalary,gender from employee_payroll group by  gender;
 select min(salary) as minSalary,gender from employee_payroll group by  gender;
 select max(salary) as maxSalary,gender from employee_payroll group by  gender;
+**********UC8**********
+alter table employee_payroll add phonenumber bigint
+alter table employee_payroll add address varchar(200) Default('INDIA')
+alter table employee_payroll add department varchar(20) Default('Engineering')
+update employee_payroll 
+set phonenumber = 7895463154, address = 'madurai', department = 'engineering' where name = 'siva' 
+update employee_payroll 
+set phonenumber = 8667361462, address = 'chennai', department = 'engineering' where name = 'Dhoni' 
 
