@@ -37,4 +37,7 @@ set phonenumber = 8667361462, address = 'chennai', department = 'engineering' wh
 *********UC9********
 alter table employee_payroll drop column salary
 alter table employee_payroll add BasicPay int ,Deduction float,TaxablePay float , IncomeTax float,NetPay float 
+*********UC10*******
+insert into employee_payroll values ('Terissa' ,'2000-10-10','F','9786146315','virudhunagar','Marketing and sales','10000','200','100','1000','100')
+select * from employee_payroll where name = 'Terissa'
 
