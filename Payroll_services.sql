@@ -34,4 +34,7 @@ update employee_payroll
 set phonenumber = 7895463154, address = 'madurai', department = 'engineering' where name = 'siva' 
 update employee_payroll 
 set phonenumber = 8667361462, address = 'chennai', department = 'engineering' where name = 'Dhoni' 
+*********UC9********
+alter table employee_payroll drop column salary
+alter table employee_payroll add BasicPay int ,Deduction float,TaxablePay float , IncomeTax float,NetPay float 
 
