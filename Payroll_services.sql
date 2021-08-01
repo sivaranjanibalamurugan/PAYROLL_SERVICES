@@ -40,7 +40,7 @@ alter table employee_payroll add BasicPay int ,Deduction float,TaxablePay float 
 --UC10-Adding Terrisa's details as marketing and Sale department--
 insert into employee_payroll values ('Terissa' ,'2000-10-10','F','9786146315','virudhunagar','Marketing and sales','10000','200','100','1000','100')
 select * from employee_payroll where name = 'Terissa'
----UC11- Modifiying the tables uing er diagrams
+---UC11- Modifiying the tables using er diagrams
 --creating employee table with employee details--
 create table Employee
 (
@@ -99,7 +99,7 @@ insert into Company values(3,'TCS')
 
 Alter table Employee drop column dept_id
 select * from Employee
---inserting the values inthe employee table--
+--inserting the values in the employee table--
 insert into Employee values('siva',1,8667361462,'temple street','chennai','Tamilnadu','2020-06-10')
 insert into Employee values('bala',1,9786164316,'East road','trichy','Tamilnadu','2020-07-12')
 insert into Employee values('Karthi',1,9876543215,'north road','salem','Tamilnadu','2020-09-5')
@@ -134,4 +134,9 @@ update PayRoll set NetPay=(BasicPay-Deduction)
 select * from PayRoll
 
 select * from PayRoll where Emp_id in (select Emp_id from Employee_Department where Dept_id=4)
+--UC7-Finding sum avg,min,max--
+select sum(PayRoll.NetPay) as totalsalary,Employee.gender from PayRoll,Employee group by gender
+select max(PayRoll.NetPay) as Minsalary,Employee.gender from PayRoll,Employee group by gender
+select min(PayRoll.NetPay) as Maxsalary,Employee.gender from PayRoll,Employee group by gender
+select avg(PayRoll.NetPay) as Avgsalary,Employee.gender from PayRoll,Employee group by gender
 
